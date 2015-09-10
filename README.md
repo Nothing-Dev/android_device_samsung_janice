@@ -1,4 +1,4 @@
 android_device_samsung_janice
 =============================
 
-CyanogenMod 12.1 Device Tree for Samsung Galaxy S Advance (GT-I9070)
+Paranoid Android 5.1.1 Device Tree for Samsung Galaxy S Advance (GT-I9070)
