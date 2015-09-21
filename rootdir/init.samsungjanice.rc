@@ -116,11 +116,6 @@ on boot
     # Bluetooth MAC address programming
     chown bluetooth bluetooth /system/etc/bt_addr
 
-    # Symlink libjhead.so > libhead.so for Camera
-    mount ext4 /dev/block/mmcblk0p3 /system remount rw
-    symlink /system/lib/libjhead.so /system/lib/libhead.so
-    mount ext4 /dev/block/mmcblk0p3 /system remount ro noatime
-
     # Permissions for LCD
     chown system system /sys/class/backlight/panel/auto_brightness
     chown system media_rw /sys/class/lcd/panel/power_reduce
