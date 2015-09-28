@@ -1,20 +1,3 @@
-diff --git a/libs/hwui/LayerRenderer.cpp b/libs/hwui/LayerRenderer.cpp
-index 83f9c6a..d41baf2 100644
---- a/libs/hwui/LayerRenderer.cpp
-+++ b/libs/hwui/LayerRenderer.cpp
-@@ -196,6 +196,12 @@ Layer* LayerRenderer::createRenderLayer(RenderState& renderState, uint32_t width
-         return NULL;
-     }
- 
-+    if (width == 0 && height == 0) {
-+        ALOGW("Trying to obtain a zero-size layer, setting fall-back size 512x768");
-+        width = 512;
-+        height = 768;
-+    }
-+
-     caches.activeTexture(0);
-     Layer* layer = caches.layerCache.get(renderState, width, height);
-     if (!layer) {
 diff --git a/core/jni/android_media_AudioRecord.cpp b/core/jni/android_media_AudioRecord.cpp
 index a8020b4..31aac06 100644
 --- a/core/jni/android_media_AudioRecord.cpp
@@ -49,10 +32,10 @@ index 83f9c6a..d309060 100644
      Layer* layer = caches.layerCache.get(renderState, width, height);
      if (!layer) {
 diff --git a/services/core/java/com/android/server/location/GpsLocationProvider.java b/services/core/java/com/android/server/location/GpsLocationProvider.java
-index 4e58c6c..5c949c2 100644
+index 2466035..571cd05 100644
 --- a/services/core/java/com/android/server/location/GpsLocationProvider.java
 +++ b/services/core/java/com/android/server/location/GpsLocationProvider.java
-@@ -1133,12 +1133,13 @@ public class GpsLocationProvider implements LocationProviderInterface {
+@@ -1120,11 +1120,12 @@ public class GpsLocationProvider implements LocationProviderInterface {
                  Log.e(TAG, "unable to parse SUPL_PORT: " + portString);
              }
          }
@@ -60,8 +43,7 @@ index 4e58c6c..5c949c2 100644
 +       /* Skip GPS init */
 +       /* if (mSuplServerHost != null
                  && mSuplServerPort > TCP_MIN_PORT
-                 && mSuplServerPort <= TCP_MAX_PORT
-                 && !mLegacyGpsHAL) {
+                 && mSuplServerPort <= TCP_MAX_PORT) {
              native_set_agps_server(AGPS_TYPE_SUPL, mSuplServerHost, mSuplServerPort);
 -        }
 +        }*/
