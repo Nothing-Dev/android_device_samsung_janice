@@ -1,2 +1,2 @@
-add_lunch_combo cm_janice-eng
-add_lunch_combo cm_janice-userdebug
+add_lunch_combo aosp_janice-eng
+add_lunch_combo aosp_janice-userdebug
