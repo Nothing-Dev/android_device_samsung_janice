@@ -13,6 +13,7 @@ index 0bb1556..33d52a8 100644
 +    && rm -f $(TARGET_ROOT_OUT)/charger && ln -sf /sbin/charger $(TARGET_ROOT_OUT)/charger
  
  include $(BUILD_EXECUTABLE)
+
 diff --git a/include/utils/Flattenable.h b/include/utils/Flattenable.h
 index 882a8b2..495b90d 100644
 --- a/include/utils/Flattenable.h
